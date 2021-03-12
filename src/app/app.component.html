@@ -1,0 +1,17 @@
+<div class="container">
+    <app-navbar></app-navbar>
+
+    <div class="container2" style="text-align: center">
+        <app-search (searchKey)="getSearchWord($event)"></app-search>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            <app-side-filter (filteredPrograms)="getMultipleFiltered($event)"></app-side-filter>
+        </div>
+        <div class="col-lg-8 col-md-4 col-sm-4 col-xs-12">
+            <app-card [cityWord]="searchWord" [filteredPrograms]="programs"></app-card>
+        </div>
+    </div>
+
+</div>
+<app-footer></app-footer>

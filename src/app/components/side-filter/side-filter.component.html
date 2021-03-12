@@ -1,0 +1,110 @@
+<div class="card p-3">
+    <div class="form-group">
+        <label>City</label>
+        <!-- <select class="custom-select" [formControl]="moreCityControl">
+      <option value="Choose one city or more" selected>
+        Choose one city or more
+      </option>
+      <option
+        [value]="city"
+        *ngFor="let city of cities"
+        (click)="getSelectedCity(city)"
+      >
+        {{ city }}
+      </option>
+    </select> -->
+        <mat-form-field appearance="outline">
+            <mat-label> Choose one city or more</mat-label>
+            <mat-select [formControl]="moreCityControl">
+                <mat-option [value]="city" *ngFor="let city of cities" (click)="getSelectedCity(city)"> {{ city }}</mat-option>
+
+            </mat-select>
+        </mat-form-field>
+        <div>
+
+            <mat-chip-list>
+                <mat-chip *ngFor="let c of selectedCities" [removable]="removable" (removed)="onRemoveSelectedCity(c)">
+                    {{ c }}
+                    <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                </mat-chip>
+            </mat-chip-list>
+        </div>
+    </div>
+
+
+
+
+    <div class="form-group">
+        <label>Program</label>
+        <div class="custom-control custom-radio" *ngFor="let rB of rbProgram">
+            <input type="radio" name="radBtn" [id]="rB.key" class="custom-control-input" (click)="getSelectedProgram(rB.value)" />
+            <label class="custom-control-label" [for]="rB.key">
+        {{ rB.value }}
+      </label>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Field</label>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Choose one field or more</mat-label>
+            <mat-select [formControl]="moreCityControl">
+                <mat-option [value]="field" *ngFor="let field of fields" (click)="getSelectedField(field)"> {{ field }}</mat-option>
+
+            </mat-select>
+        </mat-form-field>
+        <div>
+            <mat-chip-list>
+                <mat-chip style="padding: 10px; font-size: 12px" *ngFor="let f of selectedFields" [removable]="removable" (removed)="onRemoveSelectedField(f)">
+                    {{ f }}
+                    <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                </mat-chip>
+            </mat-chip-list>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>School</label>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Choose one field or more</mat-label>
+            <mat-select [formControl]="moreCityControl">
+                <mat-option [value]="school" *ngFor="let school of schools" (click)="getSelectedSchool(school)"> {{ school }}</mat-option>
+
+            </mat-select>
+        </mat-form-field>
+        <div>
+            <mat-chip-list>
+                <mat-chip style="padding: 10px; font-size: 12px" *ngFor="let s of selectedSchools" [removable]="removable" (removed)="onRemoveSelectedSchool(s)">
+                    {{ s }}
+                    <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                </mat-chip>
+            </mat-chip-list>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Language</label>
+        <div class="custom-control custom-radio" *ngFor="let rB of rbLang">
+            <input type="radio" name="radBtn2" [id]="rB.key" class="custom-control-input" (click)="getSelectedLang(rB.value)" />
+            <label class="custom-control-label" [for]="rB.key">
+        {{ rB.value }}
+      </label>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Price</label>
+        <div class="custom-control custom-radio" *ngFor="let rB of rbPrice">
+            <input type="radio" name="radBtn3" [id]="rB.key" class="custom-control-input" (click)="getSelectedPrice(rB.value)" />
+            <label class="custom-control-label" [for]="rB.key">
+        {{ rB.value }}
+      </label>
+        </div>
+    </div>
+
+    <button class="filter-btn" (click)="onFilter()">
+    Filter
+  </button>
+</div>

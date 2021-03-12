@@ -1,0 +1,19 @@
+p,
+span {
+    left: 100px;
+    /* width: 375px; */
+    height: 19px;
+    text-align: left;
+    font: normal normal normal 16px/19px Roboto;
+    letter-spacing: 0.32px;
+    color: #000000;
+    opacity: 0.4;
+    /* padding-right: 10px; */
+    font-size: 12px;
+}
+
+ul li {
+    color: #000000;
+    display: inline-block;
+    padding-right: 20px;
+}

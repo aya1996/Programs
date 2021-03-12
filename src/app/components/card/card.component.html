@@ -1,0 +1,42 @@
+<div *ngIf="programs.length === 0" class="alert alert-warn">
+    No available programs
+</div>
+<div class="card" style="width: 95%; font-size: 1rem" *ngFor="let program of programs">
+
+    <div class="row no-gutters">
+
+        <div class="col-md-3 ">
+            <img class="dataimg" [src]="program.image" alt="..." />
+        </div>
+        <div class="col-md-9">
+            <div class="card-body">
+                <h5 class="card-title" style="color: #222222; font-size: 1.1rem">
+                    {{ program.Name }}
+                </h5>
+                <p class="card-text" style="color: #666666">
+                    {{ program.school }}
+                </p>
+                <p class="card-text">
+                    <small class="text-muted">
+            Tuition Fee:
+            <span style="color: #5666a5"> {{ program.fee }} $ Per Year</span>
+          </small>
+                    <small style="color: #5666a5">
+            {{ program.city }}
+          </small>
+                    <small class="text-muted">
+            <button  class="infobtn">More info</button>
+          </small>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- <mat-paginator
+  [length]="programs.length"
+  [pageSize]="10"
+  [pageSizeOptions]="[5, 10, 25, 100]"
+>
+</mat-paginator> -->
